@@ -3,14 +3,24 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import HomeScreen from '../screens/HomeScreen';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 // const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
+
+function DashboardTab() {
+  return (
+    <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Screen name="DashboardHome" component={HomeScreen} />
+    </Tab.Navigator>
+  );
+}
 
 function AppDrawer() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Home" component={DashboardTab} />
     </Drawer.Navigator>
   );
 }
