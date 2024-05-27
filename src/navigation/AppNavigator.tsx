@@ -6,6 +6,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faHeart, faHouse} from '@fortawesome/free-solid-svg-icons';
+import FavoriteScreen from '../screens/FavoriteScreen';
 
 // const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -14,7 +15,7 @@ const Tab = createBottomTabNavigator();
 function DashboardTab() {
   return (
     <Tab.Navigator
-      screenOptions={{headerShown: false, tabBarActiveTintColor: '#e91e63'}}
+      screenOptions={{headerShown: false, tabBarActiveTintColor: '#0d253f'}}
       initialRouteName="Home">
       <Tab.Screen
         name="Home"
@@ -29,7 +30,7 @@ function DashboardTab() {
       />
       <Tab.Screen
         name="Favorite"
-        component={HomeScreen}
+        component={FavoriteScreen}
         options={{
           tabBarLabel: 'Favorite',
           // eslint-disable-next-line react/no-unstable-nested-components
