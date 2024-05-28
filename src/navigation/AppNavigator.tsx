@@ -7,6 +7,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faHeart, faHouse} from '@fortawesome/free-solid-svg-icons';
 import FavoriteScreen from '../screens/FavoriteScreen';
+import CustomDrawer from '../components/CustomDrawer';
 
 // const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -45,7 +46,7 @@ function DashboardTab() {
 
 function AppDrawer() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Screen name="Dashboard" component={DashboardTab} />
     </Drawer.Navigator>
   );
