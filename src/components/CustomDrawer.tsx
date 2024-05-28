@@ -7,7 +7,6 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
-  Switch,
 } from 'react-native';
 import {
   DrawerContentScrollView,
@@ -47,27 +46,6 @@ function CustomDrawer(props: any) {
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>
-      <View
-        style={{
-          borderTopWidth: 1,
-          borderTopColor: '#ccc',
-          // backgroundColor: colors.cardbackground,
-        }}>
-        <Text style={styles.preferences}>Preferences</Text>
-        <View style={styles.switchTextContainer}>
-          <Switch
-            trackColor={{false: '#767577', true: '#81b0ff'}}
-            thumbColor="#f4f3f4"
-            style={{transform: [{scaleX: 0.9}, {scaleY: 0.9}]}}
-          />
-          <Text
-            style={{
-              fontSize: 15,
-            }}>
-            Dark Theme
-          </Text>
-        </View>
-      </View>
       <View style={{padding: 20, borderTopWidth: 1, borderTopColor: '#ccc'}}>
         <TouchableOpacity
           onPress={function () {}}
@@ -86,7 +64,7 @@ function CustomDrawer(props: any) {
         <TouchableOpacity
           style={{paddingVertical: 15}}
           onPress={function () {
-            props.navigation.closeDrawer();
+            props.navigation.navigate('Login');
           }}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <FontAwesomeIcon icon={faShare} size={22} />
